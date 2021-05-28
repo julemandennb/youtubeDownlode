@@ -37,7 +37,6 @@ namespace youtubeDownlode
             this.radioMp4 = new System.Windows.Forms.RadioButton();
             this.buttonPaht = new System.Windows.Forms.Button();
             this.labelPAHT = new System.Windows.Forms.Label();
-            this.progressBarDone = new System.Windows.Forms.ProgressBar();
             this.listBoxVideo = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -117,20 +116,12 @@ namespace youtubeDownlode
             this.labelPAHT.Size = new System.Drawing.Size(0, 13);
             this.labelPAHT.TabIndex = 7;
             // 
-            // progressBarDone
-            // 
-            this.progressBarDone.Location = new System.Drawing.Point(2, 110);
-            this.progressBarDone.Name = "progressBarDone";
-            this.progressBarDone.Size = new System.Drawing.Size(587, 23);
-            this.progressBarDone.Step = 1;
-            this.progressBarDone.TabIndex = 8;
-            // 
             // listBoxVideo
             // 
             this.listBoxVideo.FormattingEnabled = true;
-            this.listBoxVideo.Location = new System.Drawing.Point(8, 139);
+            this.listBoxVideo.Location = new System.Drawing.Point(8, 113);
             this.listBoxVideo.Name = "listBoxVideo";
-            this.listBoxVideo.Size = new System.Drawing.Size(575, 134);
+            this.listBoxVideo.Size = new System.Drawing.Size(575, 160);
             this.listBoxVideo.TabIndex = 9;
             // 
             // Form1
@@ -139,7 +130,6 @@ namespace youtubeDownlode
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 279);
             this.Controls.Add(this.listBoxVideo);
-            this.Controls.Add(this.progressBarDone);
             this.Controls.Add(this.labelPAHT);
             this.Controls.Add(this.buttonPaht);
             this.Controls.Add(this.radioMp4);
@@ -170,7 +160,6 @@ namespace youtubeDownlode
         private System.Windows.Forms.RadioButton radioMp4;
         private System.Windows.Forms.Button buttonPaht;
         private System.Windows.Forms.Label labelPAHT;
-        private System.Windows.Forms.ProgressBar progressBarDone;
         private System.Windows.Forms.ListBox listBoxVideo;
     }
 }

@@ -20,7 +20,6 @@ namespace youtubeDownlode
     {
         private User user;
         private YoutubeClient youtube;
-        private int step = 0;
         private int ListNr = 0;
         private int IsOn = 0;
 
@@ -44,18 +43,16 @@ namespace youtubeDownlode
         private void NullStil()
         {
             this.listBoxVideo.Items.Clear();
-            this.progressBarDone.Value = 0;
             ListNr = 0;
             IsOn = 0;
 
-    }
+        }
 
         private void buttonVideo_Click(object sender, EventArgs e)
         {
             this.NullStil();
             if (this.textBoxUrl.Text.Length > 0)
             {
-                step = 100;
                 ListNr = 1;
                 _ = GetInfoAsync(this.textBoxUrl.Text);
             }
@@ -72,8 +69,6 @@ namespace youtubeDownlode
         {
             var playlist = await youtube.Playlists.GetVideosAsync(this.textBoxUrl.Text);
             ListNr = playlist.Count-1;
-            var stepTonAdd = 100 / Convert.ToDecimal(playlist.Count);
-            step = Convert.ToInt32(Math.Floor(stepTonAdd));
 
             foreach(var video in playlist)
             {
@@ -86,7 +81,7 @@ namespace youtubeDownlode
 
                 var video = await youtube.Videos.GetAsync(url);
                 string name = video.Title;
-                name = name.Replace(" ", "_").Replace(":", "").Replace("|", "").Replace("*", "");
+                name = name.Replace(" ", "_").Replace(":", "").Replace("|", "").Replace("*", "").Replace("/", "").Replace(@"\", "");
 
                 getVideo(url, name);
         }
@@ -97,7 +92,6 @@ namespace youtubeDownlode
             try
             {
                 await youtube.Videos.DownloadAsync(url, user.GetSetpath + name + FileType);
-
 
                 this.listBoxVideo.Items.Add(name + " Done");
 
@@ -112,13 +106,13 @@ namespace youtubeDownlode
             {
 
                 if (IsOn >= ListNr)
-                    this.progressBarDone.Value = 100;
+                {
+                    this.listBoxVideo.Items.Add("done");
+                    MessageBox.Show("Alle IS download");
+                }
                 else
                 {
-                    this.progressBarDone.Value = this.progressBarDone.Value + this.step;
-
-                    IsOn ++;
-
+                    IsOn++;
                 }
             }
         }
