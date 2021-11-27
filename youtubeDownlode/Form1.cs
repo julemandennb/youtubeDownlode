@@ -81,7 +81,7 @@ namespace youtubeDownlode
 
                 var video = await youtube.Videos.GetAsync(url);
                 string name = video.Title;
-                name = name.Replace(" ", "_").Replace(":", "").Replace("|", "").Replace("*", "").Replace("/", "").Replace(@"\", "");
+                name = name.Replace(" ", "_").Replace(":", "").Replace("|", "").Replace("*", "").Replace("/", "").Replace(@"\", "").Replace("\"", "").Replace("'", "");
 
                 getVideo(url, name);
         }
@@ -108,7 +108,7 @@ namespace youtubeDownlode
                 if (IsOn >= ListNr)
                 {
                     this.listBoxVideo.Items.Add("done");
-                    MessageBox.Show("Alle IS download");
+                    MessageBox.Show("Alle er download");
                 }
                 else
                 {
