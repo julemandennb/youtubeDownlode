@@ -38,6 +38,7 @@ namespace youtubeDownlode
             this.buttonPaht = new System.Windows.Forms.Button();
             this.labelPAHT = new System.Windows.Forms.Label();
             this.listBoxVideo = new System.Windows.Forms.ListBox();
+            this.labelVR = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxUrl
@@ -124,11 +125,21 @@ namespace youtubeDownlode
             this.listBoxVideo.Size = new System.Drawing.Size(575, 160);
             this.listBoxVideo.TabIndex = 9;
             // 
+            // labelVR
+            // 
+            this.labelVR.AutoSize = true;
+            this.labelVR.Location = new System.Drawing.Point(12, 276);
+            this.labelVR.Name = "labelVR";
+            this.labelVR.Size = new System.Drawing.Size(22, 13);
+            this.labelVR.TabIndex = 10;
+            this.labelVR.Text = "VR";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 279);
+            this.ClientSize = new System.Drawing.Size(589, 294);
+            this.Controls.Add(this.labelVR);
             this.Controls.Add(this.listBoxVideo);
             this.Controls.Add(this.labelPAHT);
             this.Controls.Add(this.buttonPaht);
@@ -139,8 +150,8 @@ namespace youtubeDownlode
             this.Controls.Add(this.Id);
             this.Controls.Add(this.textBoxUrl);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(605, 318);
-            this.MinimumSize = new System.Drawing.Size(605, 318);
+            this.MaximumSize = new System.Drawing.Size(605, 333);
+            this.MinimumSize = new System.Drawing.Size(605, 333);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -161,6 +172,7 @@ namespace youtubeDownlode
         private System.Windows.Forms.Button buttonPaht;
         private System.Windows.Forms.Label labelPAHT;
         private System.Windows.Forms.ListBox listBoxVideo;
+        private System.Windows.Forms.Label labelVR;
     }
 }
 

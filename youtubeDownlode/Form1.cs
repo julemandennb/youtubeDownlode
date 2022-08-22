@@ -13,6 +13,10 @@ using YoutubeExplode.Converter;
 using Profil;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using YoutubeExplode.Common;
+using System.Net;
+using System.Dynamic;
+using Newtonsoft.Json;
+using CheckUpdate;
 
 namespace youtubeDownlode
 {
@@ -22,6 +26,7 @@ namespace youtubeDownlode
         private YoutubeClient youtube;
         private int ListNr = 0;
         private int IsOn = 0;
+        private UpdataCheck UpdataCheck;
 
         public Form1()
         {
@@ -37,8 +42,35 @@ namespace youtubeDownlode
 
             this.labelPAHT.Text = user.GetSetpath;
 
+            this.labelVR.Text = "VR:" +ProductVersion.ToString();
+
+            this.UpdataCheck = new UpdataCheck("youtubeDownlode", "julemandennb", "youtubeDownlode");
+
+            this.lastReleases();
+        }
+
+
+
+        private async void lastReleases()
+        {
+            ReleaseObj releaseObj =  await this.UpdataCheck.lastReleases();
+
+            int onlineVR = Convert.ToInt32(releaseObj.Name.Replace(".", "").Replace(",", ""));
+
+            int localVR = Convert.ToInt32(ProductVersion.ToString().Replace(".", "").Replace(",", ""));
+
+            if(onlineVR > localVR)
+            {
+                if (MessageBox.Show("Vil du hent den nu", "ny Updata", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start(releaseObj.HtmlUrl);
+                }
+
+            }
 
         }
+
+
 
         private void NullStil()
         {
@@ -143,6 +175,7 @@ namespace youtubeDownlode
                     return ".mp4";
             }
         }
+
 
 
     }

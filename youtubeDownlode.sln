@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "youtubeDownlode", "youtubeDownlode\youtubeDownlode.csproj", "{870B66C4-C99E-412B-967A-1B9BD83FD864}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profil", "Profil\Profil.csproj", "{CB033551-C86F-42C3-8100-F1A01928F35C}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "youtubeDownlodeSetup", "youtubeDownlodeSetup\youtubeDownlodeSetup.vdproj", "{6B515DC8-2212-40FC-B413-3B3C5FA0FD14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckUpdate", "CheckUpdate\CheckUpdate.csproj", "{B4B691FB-F8AE-40D3-861C-37BD4C052048}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{CB033551-C86F-42C3-8100-F1A01928F35C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B515DC8-2212-40FC-B413-3B3C5FA0FD14}.Debug|Any CPU.ActiveCfg = Debug
 		{6B515DC8-2212-40FC-B413-3B3C5FA0FD14}.Release|Any CPU.ActiveCfg = Release
+		{B4B691FB-F8AE-40D3-861C-37BD4C052048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B691FB-F8AE-40D3-861C-37BD4C052048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B691FB-F8AE-40D3-861C-37BD4C052048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B691FB-F8AE-40D3-861C-37BD4C052048}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
